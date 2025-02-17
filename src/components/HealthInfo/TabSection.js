@@ -30,18 +30,13 @@ const TabSection = () => (
     theme={{
       components: {
         Tabs: {
-          itemColor: "#999999", 
-          itemActiveColor: "black", 
+          itemColor: "#999999",
+          itemActiveColor: "black",
         },
       },
     }}
   >
-    <Tabs
-      defaultActiveKey="1"
-      items={items}
-      onChange={onChange}
-      style={{ borderColor: "red" }}
-    />
+    <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
   </ConfigProvider>
 );
 export default TabSection;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Collapse, Space, Button } from "antd";
-import { EditOutlined } from "@ant-design/icons"; // Importing an icon
+import { CaretUpOutlined, EditOutlined } from "@ant-design/icons"; // Importing an icon
 import PastMedical from "./CollapseInnerSections/PastMedical";
 import Allergy from "./CollapseInnerSections/Allergy";
 import PastSurgical from "./CollapseInnerSections/PastSurgical";
@@ -28,6 +28,7 @@ const CollapseSections = () => (
         bordered={false}
         expandIconPosition="start"
         defaultActiveKey={["0", "2"]}
+        expandIcon={<CaretUpOutlined />}
         style={{
           backgroundColor: "white",
           boxShadow:
@@ -35,7 +36,7 @@ const CollapseSections = () => (
         }}
         items={[
           {
-            key:  index ,
+            key: index,
             label: item.label,
             children: item.component,
             extra: (
