@@ -54,20 +54,20 @@ const secondRowItems = [
 
 const PastMedical = () => (
   <>
-    <Row gutter={[16]} style={{ marginBottom: "10px" }}>
-      <Col className="gutter-row" span={5}>
+    <Row gutter={[16]} style={{ rowGap: "10px", marginBottom: "10px" }}>
+      <Col className="gutter-row" xs={24} sm={12} md={5}>
         <div style={style}>
           <div style={headingText}>Weight</div>
           <div style={detailText}>90lbs</div>
         </div>
       </Col>
-      <Col className="gutter-row" span={5}>
+      <Col className="gutter-row" xs={24} sm={12} md={5}>
         <div style={style}>
           <div style={headingText}>Height</div>
           <div style={detailText}>5'7"</div>
         </div>
       </Col>
-      <Col className="gutter-row" span={5}>
+      <Col className="gutter-row" xs={24} sm={12} md={5}>
         <div style={style}>
           <div style={headingText}>BMI</div>
           <div style={detailText}>4.4</div>
@@ -76,8 +76,8 @@ const PastMedical = () => (
     </Row>
 
     <Row gutter={[16, 24]} style={{ rowGap: "10px", marginBottom: "10px" }}>
-      {secondRowItems.map((item) => (
-        <Col className="gutter-row" span={12}>
+      {secondRowItems.map((item, index) => (
+        <Col key={index} className="gutter-row" xs={24} sm={12} md={12}>
           <div style={style}>
             <div style={headingText}>{item.heading}</div>
             <div style={detailText}>{item.detail}</div>
@@ -87,7 +87,7 @@ const PastMedical = () => (
     </Row>
 
     <Row gutter={[16, 24]} style={{ rowGap: "10px", marginBottom: "10px" }}>
-      <Col className="gutter-row" span={24}>
+      <Col className="gutter-row" xs={24}>
         <div style={style}>
           <div style={headingText}>
             Do any family members have a history of mental health conditions?
