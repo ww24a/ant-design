@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { Button, ConfigProvider, Tabs } from "antd";
 import { EditFilled } from "@ant-design/icons";
 import MedicalHistory from "./MedicalHistory/page";
+import HealthEquity from "./HealthEquity/page";
+import Pharmacy from "./Pharmacy/page";
+import LifeStyle from "./LifeStyle/page";
 
 const items = [
   { key: "1", label: "Medical History", children: <MedicalHistory /> },
-  { key: "2", label: "Health Equity Info", children: "" },
-  { key: "3", label: "LifeStyle", children: "" },
-  { key: "4", label: "Pharmacy", children: "" },
+  { key: "2", label: "Health Equity Info", children: <HealthEquity /> },
+  { key: "3", label: "LifeStyle", children: <LifeStyle /> },
+  { key: "4", label: "Pharmacy", children: <Pharmacy /> },
 ];
 
 const TabSection = () => {
