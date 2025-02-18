@@ -28,6 +28,7 @@ const TabSection = () => {
       type="text"
       className="collapseText blueText"
       size="small"
+      style={{ fontSize: "14px" }}
     >
       Update {activeLabel}
     </Button>
