@@ -98,3 +98,6 @@
   padding-left: "8px";
   font-weight: "600";
 }
+.ant-table-cell, .ant-table-cell span{
+  font-size: 12px !important;
+}

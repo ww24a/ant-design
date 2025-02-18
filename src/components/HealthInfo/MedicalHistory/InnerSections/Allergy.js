@@ -55,7 +55,7 @@ const data = [
     DateAdded: "11/12/2024",
     ReactionType: "Allergy",
     ReactionSeverity: "-",
-    Status: <Badge color="#f50" text="Current" />,
+    Status: <Badge color="#f50" text="Current" style={{}} />,
     Reactant: "Ecallantide",
   },
   {
@@ -63,7 +63,7 @@ const data = [
     DateAdded: "11/12/2024",
     ReactionType: "Allergy",
     ReactionSeverity: "-",
-    Status: <Badge color="#f50" text="Current" />,
+    Status: <Badge color="#f50" text="Current" style={{}} />,
     Reactant: "Ecallantide",
   },
   {
@@ -71,7 +71,7 @@ const data = [
     DateAdded: "11/12/2024",
     ReactionType: "Allergy",
     ReactionSeverity: "-",
-    Status: <Badge color="#f50" text="Current" />,
+    Status: <Badge color="#f50" text="Current" style={{}} />,
     Reactant: "Ecallantide",
   },
 ];
