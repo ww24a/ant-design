@@ -31,7 +31,7 @@ const secondRowItems = [
 export const gutterRow = {
   background: "rgba(230, 245, 252, 0.5)",
   padding: "8px 8px",
-  border: "1px solid rgba(230, 245, 252, 0.9)",
+  // border: "1px solid rgba(230, 245, 252, 0.9)",
   textAlign: "start",
   borderRadius: "15px",
 };
@@ -52,7 +52,7 @@ export const detailText = {
 
 const PastMedical = () => (
   <>
-    <Row gutter={[4, 4]} style={{gap:"4px",  marginBottom: "10px" }}>
+    <Row gutter={[4, 4]} style={{gap:"4px",  marginBottom: "4px" }}>
       <Col style={gutterRow} xs={24} sm={12} md={5}>
         <div style={headingText}>Weight</div>
         <div style={detailText}>90lbs</div>
@@ -69,7 +69,7 @@ const PastMedical = () => (
 
     <Row
       gutter={[4, 4]}
-      style={{ marginBottom: "10px" }}
+      style={{ marginBottom: "4px" }}
     >
       {secondRowItems.map((item, index) => (
         <Col key={index} style={gutterRow} xs={24} sm={12} md={12}>
@@ -79,7 +79,7 @@ const PastMedical = () => (
       ))}
     </Row>
 
-    <Row gutter={[4, 4]} style={{ marginBottom: "10px" }}>
+    <Row gutter={[4, 4]} style={{ marginBottom: "4px" }}>
       <Col style={gutterRow} xs={24}>
         <div style={headingText}>
           Do any family members have a history of mental health conditions?

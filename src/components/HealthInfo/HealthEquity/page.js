@@ -1,7 +1,7 @@
 import { Col, Row } from "antd";
 import {
   detailText,
-  gutterRow,
+  // gutterRow,
   headingText,
 } from "../MedicalHistory/InnerSections/PastMedical";
 
@@ -39,7 +39,7 @@ const HealthEquity = () => {
   return (
     <Row
       gutter={[4, 4]}
-      style={{gap:"4px", marginBottom: "10px" }}
+      style={{gap:"4px", marginBottom: "4px" }}
     >
       {rowItems.map((item, index) => (
         <Col key={index}  xs={24} sm={12} md={5}>
