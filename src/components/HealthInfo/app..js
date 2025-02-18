@@ -1,7 +1,17 @@
-import CollapseSections from "./CollapseSections";
+import { useState } from "react";
 import TabSection from "./TabSection";
+import { CloseCircleOutlined } from "@ant-design/icons";
+import { Button, Drawer } from "antd";
 
 const HealthInfo = () => {
+  const [open, setOpen] = useState(false);
+  const showDrawer = () => {
+    setOpen(true);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div
       style={{
@@ -12,27 +22,35 @@ const HealthInfo = () => {
         margin: "0px",
       }}
     >
-      <div
+      <Button
+        type="primary"
+        onClick={showDrawer}
+        style={{ position: "absolute", left: "0px" }}
+      >
+        Open
+      </Button>
+      <Drawer
+        open={open}
+        onClose={onClose}
+        closeIcon={<CloseCircleOutlined />}
         style={{
-          height: "96vh",
-          width: "fit-content",
+          width: "811px",
           overflow: "auto",
           backgroundColor: "#E6F5FC",
-          padding: "2vh",
         }}
+        className="responsiveWidth"
+        title={"My Health Info"}
       >
         <div
           style={{
-            height: "fit-content",
             backgroundColor: "white",
             padding: "20px",
+            borderRadius: "15px",
           }}
-          className="responsiveWidth"
         >
           <TabSection />
-          <CollapseSections />
         </div>
-      </div>
+      </Drawer>
     </div>
   );
 };

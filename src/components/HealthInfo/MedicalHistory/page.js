@@ -1,11 +1,11 @@
 import React from "react";
 import { Collapse, Space, Button } from "antd";
-import { CaretUpOutlined, EditOutlined } from "@ant-design/icons"; // Importing an icon
-import PastMedical from "./CollapseInnerSections/PastMedical";
-import Allergy from "./CollapseInnerSections/Allergy";
-import PastSurgical from "./CollapseInnerSections/PastSurgical";
-import MedicationHistory from "./CollapseInnerSections/MedicationHistory";
-import FamilyHistory from "./CollapseInnerSections/FamilyHistory";
+import { CaretUpFilled, EditFilled } from "@ant-design/icons"; // Importing an icon
+import PastMedical from "./InnerSections/PastMedical";
+import Allergy from "./InnerSections/Allergy";
+import FamilyHistory from "./InnerSections/FamilyHistory";
+import PastSurgical from "./InnerSections/PastSurgical";
+import MedicationHistory from "./InnerSections/MedicationHistory";
 
 const collapseItems = [
   { label: "Past Medical", component: <PastMedical /> },
@@ -15,7 +15,7 @@ const collapseItems = [
   { label: "Family History", component: <FamilyHistory /> },
 ];
 
-const CollapseSections = () => (
+const MedicalHistory = () => (
   <Space
     direction="vertical"
     className="collapseText"
@@ -23,12 +23,15 @@ const CollapseSections = () => (
   >
     {collapseItems.map((item, index) => (
       <Collapse
+        key={index}
         collapsible="header"
         destroyInactivePanel={true}
         bordered={false}
         expandIconPosition="start"
         defaultActiveKey={["0", "2"]}
-        expandIcon={<CaretUpOutlined />}
+        expandIcon={({ isActive }) => (
+          <CaretUpFilled rotate={isActive ? 0 : 180} />
+        )}
         style={{
           backgroundColor: "white",
           boxShadow:
@@ -41,7 +44,7 @@ const CollapseSections = () => (
             children: item.component,
             extra: (
               <Button
-                icon={<EditOutlined />}
+                icon={<EditFilled />}
                 type="text"
                 onClick={() => console.log(index)}
                 className="collapseText blueText"
@@ -57,4 +60,4 @@ const CollapseSections = () => (
   </Space>
 );
 
-export default CollapseSections;
+export default MedicalHistory;

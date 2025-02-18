@@ -1,5 +1,5 @@
 import React from "react";
-import { EditOutlined, DeleteOutlined } from "@ant-design/icons"; // Importing an icon
+import { EditFilled, DeleteFilled } from "@ant-design/icons"; // Importing an icon
 import { Badge, Button, Space, Table } from "antd";
 const columns = [
   {
@@ -33,13 +33,13 @@ const columns = [
     render: (_, record) => (
       <Space size="small">
         <Button
-          icon={<EditOutlined />}
+          icon={<EditFilled />}
           type="text"
           className="collapseText blueText"
           size="small"
         ></Button>
         <Button
-          icon={<DeleteOutlined />}
+          icon={<DeleteFilled />}
           type="text"
           className="collapseText"
           size="small"
