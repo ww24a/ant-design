@@ -74,32 +74,37 @@ const PastMedical = () => (
 
     <Row gutter={[4, 4]} style={{ marginBottom: "4px" }}>
       {secondRowItems.map((item, index) => (
-        <Col key={index} style={gutterRow} xs={24} sm={12} md={12}>
-          <div style={headingText}>
-            {item.heading}
-            {item.image && (
-              <Button
-                size="small"
-                style={{
-                  backgroundColor: "rgba(230, 245, 252, 1)",
-                  border: "none",
-                }}
-              >
-                <img
-                  src={item.image}
-                  alt="download"
+        <Col key={index} xs={24} sm={12} md={12}>
+          <div
+            key={index}
+            style={{ ...gutterRow, height: "calc(100% - 18px)" }}
+          >
+            <div style={headingText}>
+              {item.heading}
+              {item.image && (
+                <Button
+                  size="small"
                   style={{
-                    width: "19px",
-                    height: "16px",
-                    borderRadius: "3px",
-                    margin: "0px",
+                    backgroundColor: "rgba(230, 245, 252, 1)",
+                    border: "none",
                   }}
-                />
-                {<DownloadOutlined />}
-              </Button>
-            )}
+                >
+                  <img
+                    src={item.image}
+                    alt="download"
+                    style={{
+                      width: "19px",
+                      height: "16px",
+                      borderRadius: "3px",
+                      margin: "0px",
+                    }}
+                  />
+                  {<DownloadOutlined />}
+                </Button>
+              )}
+            </div>
+            <div style={detailText}>{item.detail}</div>
           </div>
-          <div style={detailText}>{item.detail}</div>
         </Col>
       ))}
     </Row>

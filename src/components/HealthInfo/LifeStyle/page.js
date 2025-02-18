@@ -38,12 +38,16 @@ const rowItems = [
 const LifeStyle = () => {
   return (
     <>
-      <Row gutter={[4, 4]} style={{ marginBottom: "4px" }}>
-        {rowItems.map((item, index) => (
-          <Col key={index} style={gutterRow} xs={24} sm={12} md={12}>
+
+    <Row gutter={[4, 4]} style={{ marginBottom: "4px" }}>
+      {rowItems.map((item, index) => (
+        <Col key={index} xs={24} sm={12} md={12}>
+          <div
+            key={index}
+            style={{ ...gutterRow, height: "calc(100% - 18px)" }}
+          >
             <div style={headingText}>
               {item.heading}
-
               {item.image && (
                 <Button
                   size="small"
@@ -67,9 +71,10 @@ const LifeStyle = () => {
               )}
             </div>
             <div style={detailText}>{item.detail}</div>
-          </Col>
-        ))}
-      </Row>
+          </div>
+        </Col>
+      ))}
+    </Row>
 
       <Row gutter={[4, 4]} style={{ marginBottom: "4px" }}>
         <Col style={gutterRow} xs={24}>
