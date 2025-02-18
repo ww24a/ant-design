@@ -6,18 +6,46 @@ import Allergy from "./InnerSections/Allergy";
 import FamilyHistory from "./InnerSections/FamilyHistory";
 import PastSurgical from "./InnerSections/PastSurgical";
 import MedicationHistory from "./InnerSections/MedicationHistory";
-import UpdateModal from "../UpdateModal/page";
+// modal files
+import UpdateModal from "./UpdateModal/page";
+// modal inner pages (forms)
+import UpdatePastMedical from "./UpdateModal/UpdatePastMedical";
+import UpdatePastSurgical from "./UpdateModal/UpdatePastSurgical";
+import UpdateAllergy from "./UpdateModal/UpdateAllergy";
+import UpdateMedicationHistory from "./UpdateModal/UpdateMedicationHistory";
+import UpdateFamilyHistory from "./UpdateModal/UpdateFamilyHistory";
 
 const collapseItems = [
-  { label: "Past Medical", component: <PastMedical /> },
-  { label: "Past Surgical", component: <PastSurgical /> },
-  { label: "Allergy", component: <Allergy /> },
-  { label: "Medication History", component: <MedicationHistory /> },
-  { label: "Family History", component: <FamilyHistory /> },
+  {
+    label: "Past Medical",
+    component: <PastMedical />,
+    updateModalInnerForm: <UpdatePastMedical />,
+  },
+  {
+    label: "Past Surgical",
+    component: <PastSurgical />,
+    updateModalInnerForm: <UpdatePastSurgical />,
+  },
+  {
+    label: "Allergy",
+    component: <Allergy />,
+    updateModalInnerForm: <UpdateAllergy />,
+  },
+  {
+    label: "Medication History",
+    component: <MedicationHistory />,
+    updateModalInnerForm: <UpdateMedicationHistory />,
+  },
+  {
+    label: "Family History",
+    component: <FamilyHistory />,
+    updateModalInnerForm: <UpdateFamilyHistory />,
+  },
 ];
 
 const MedicalHistory = () => {
   const [open, setOpen] = useState(false);
+
   const handleSave = () => {
     console.log("Updating data");
   };
@@ -68,7 +96,7 @@ const MedicalHistory = () => {
             open={open === item.label}
             handleSave={handleSave}
             setOpen={setOpen}
-            innerForm={<>{item.label}</>}
+            innerForm={item.updateModalInnerForm}
             title={item.label}
           />
         </>
