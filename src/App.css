@@ -58,17 +58,6 @@
 .ant-table-tbody > td {
   font-size: 12px !important;
 }
-.responsiveWidth,
-.ant-drawer-content-wrapper {
-  /* width: 811px !important; */
-}
-
-@media (max-width: 999px) {
-  .responsiveWidth,
-  .ant-drawer-content-wrapper {
-    /* width: 90% !important; */
-  }
-}
 
 .ant-drawer-header-title div,
 .ant-drawer-header-title button {
