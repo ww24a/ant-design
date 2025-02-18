@@ -101,3 +101,7 @@
 .ant-table-cell, .ant-table-cell span{
   font-size: 12px !important;
 }
+.ant-modal-title {
+  font-size: 20px !important;
+  font-weight: bold;
+}
