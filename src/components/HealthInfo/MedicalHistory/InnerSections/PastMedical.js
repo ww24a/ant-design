@@ -52,7 +52,7 @@ export const detailText = {
 
 const PastMedical = () => (
   <>
-    <Row gutter={[4, 4]} style={{ marginBottom: "10px" }}>
+    <Row gutter={[4, 4]} style={{gap:"4px",  marginBottom: "10px" }}>
       <Col style={gutterRow} xs={24} sm={12} md={5}>
         <div style={headingText}>Weight</div>
         <div style={detailText}>90lbs</div>

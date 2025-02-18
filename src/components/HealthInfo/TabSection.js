@@ -45,6 +45,7 @@ const TabSection = () => {
       }}
     >
       <Tabs
+        // style={{ width: "100%" }}
         defaultActiveKey="1"
         items={items}
         onChange={onChange}

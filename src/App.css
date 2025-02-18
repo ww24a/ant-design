@@ -60,13 +60,13 @@
 }
 .responsiveWidth,
 .ant-drawer-content-wrapper {
-  width: 811px !important;
+  /* width: 811px !important; */
 }
 
 @media (max-width: 999px) {
   .responsiveWidth,
   .ant-drawer-content-wrapper {
-    width: 90% !important;
+    /* width: 90% !important; */
   }
 }
 

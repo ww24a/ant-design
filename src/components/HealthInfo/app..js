@@ -30,15 +30,14 @@ const HealthInfo = () => {
         Open
       </Button>
       <Drawer
-        open={open}
+        open={!open}
         onClose={onClose}
         closeIcon={<CloseCircleOutlined />}
         style={{
-          width: "811px",
           overflow: "auto",
           backgroundColor: "#E6F5FC",
         }}
-        className="responsiveWidth"
+        width={"811px"}
         title={"My Health Info"}
       >
         <div
@@ -46,6 +45,7 @@ const HealthInfo = () => {
             backgroundColor: "white",
             padding: "20px",
             borderRadius: "15px",
+            width:"calc(100% - 48px)"
           }}
         >
           <TabSection />
