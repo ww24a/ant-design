@@ -45,7 +45,7 @@ const HealthInfo = () => {
             backgroundColor: "white",
             padding: "20px",
             borderRadius: "15px",
-            width:"calc(100% - 48px)"
+            width: "calc(100% - 48px)",
           }}
         >
           <TabSection />
