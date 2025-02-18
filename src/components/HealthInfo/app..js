@@ -30,7 +30,7 @@ const HealthInfo = () => {
         Open
       </Button>
       <Drawer
-        open={open}
+        open={!open}
         onClose={onClose}
         closeIcon={<CloseCircleOutlined />}
         style={{

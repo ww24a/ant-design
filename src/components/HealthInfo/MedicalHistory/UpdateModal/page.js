@@ -10,6 +10,9 @@ const UpdateModal = ({ open, handleSave, setOpen, innerForm, title }) => {
       <Modal
         open={open}
         title={title}
+        onOk={handleSave}
+        onCancel={handleCancel}
+        width={"900px"}
         closeIcon={<CloseCircleOutlined style={{ fontSize: "20px" }} />}
         footer={() => (
           <>
