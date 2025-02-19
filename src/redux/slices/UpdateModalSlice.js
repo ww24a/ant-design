@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  open: "",
+  open: null,
+  nameOfSection: "",
 };
 
 const openSlice = createSlice({
@@ -11,8 +12,11 @@ const openSlice = createSlice({
     setOpen: (state, action) => {
       state.open = action.payload;
     },
+    setNameOfSection: (state, action) => {
+      state.nameOfSection = action.payload;
+    },
   },
 });
 
-export const { setOpen } = openSlice.actions;
+export const { setOpen, setNameOfSection } = openSlice.actions;
 export default openSlice.reducer;

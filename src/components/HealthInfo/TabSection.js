@@ -10,42 +10,49 @@ import UpdateHealthEquity from "./HealthInfoUpdateForms/UpdateHealthEquity";
 import UpdateLifestyle from "./HealthInfoUpdateForms/UpdateLifestyle";
 import UpdatePharmacy from "./HealthInfoUpdateForms/UpdatePharmacy";
 import UpdateModal from "./UpdateModal";
+import { useDispatch, useSelector } from "react-redux";
+import { setNameOfSection, setOpen } from "../../redux/slices/UpdateModalSlice";
 
 const items = [
   {
     key: "1",
     label: "Medical History",
     children: <MedicalHistory />,
-    UpdateForms: <UpdateMedicalHistory />,
+    updateModalInnerForm: <UpdateMedicalHistory />,
   },
   {
     key: "2",
     label: "Health Equity Info",
     children: <HealthEquity />,
-    UpdateForms: <UpdateHealthEquity />,
+    updateModalInnerForm: <UpdateHealthEquity />,
   },
   {
     key: "3",
     label: "LifeStyle",
     children: <LifeStyle />,
-    UpdateForms: <UpdateLifestyle />,
+    updateModalInnerForm: <UpdateLifestyle />,
   },
   {
     key: "4",
     label: "Pharmacy",
     children: <Pharmacy />,
-    UpdateForms: <UpdatePharmacy />,
+    updateModalInnerForm: <UpdatePharmacy />,
   },
 ];
 
 const TabSection = () => {
   const [activeKey, setActiveKey] = useState("1");
+  const dispatch = useDispatch();
+  const UpdateModalSlice = useSelector((state) => state.UpdateModalSlice);
 
   const onChange = (key) => {
     setActiveKey(key);
+    dispatch(setNameOfSection(items[key-1].label));
   };
+console.log(UpdateModalSlice);
 
   const activeLabel = items.find((item) => item.key === activeKey)?.label;
+  console.log(activeLabel);
 
   const updateButton = (
     <Button
@@ -54,16 +61,19 @@ const TabSection = () => {
       className="collapseText blueText"
       size="small"
       style={{ fontSize: "14px" }}
+      onClick={() => {
+        dispatch(setOpen(activeLabel));
+      }}
     >
       Update {activeLabel}
     </Button>
   );
 
-  const [open, setOpen] = useState(false);
 
   const handleSave = () => {
     console.log("Updating data");
   };
+  console.log(items[activeKey]);
 
   return (
     <ConfigProvider
@@ -83,11 +93,10 @@ const TabSection = () => {
         tabBarExtraContent={updateButton}
       />
       <UpdateModal
-        open={open}
+        open={UpdateModalSlice.open === activeLabel}
         handleSave={handleSave}
-        setOpen={setOpen}
-        innerForm={items[activeKey].updateModalInnerForm}
-        title={items[activeKey].label}
+        innerForm={items[activeKey - 1].updateModalInnerForm}
+        title={activeLabel}
       />
     </ConfigProvider>
   );
