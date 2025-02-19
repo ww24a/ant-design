@@ -7,13 +7,13 @@ import FamilyHistory from "./InnerSections/FamilyHistory";
 import PastSurgical from "./InnerSections/PastSurgical";
 import MedicationHistory from "./InnerSections/MedicationHistory";
 // modal files
-import UpdateModal from "./UpdateModal/page";
 // modal inner pages (forms)
-import UpdatePastMedical from "./UpdateModal/UpdatePastMedical";
-import UpdatePastSurgical from "./UpdateModal/UpdatePastSurgical";
-import UpdateAllergy from "./UpdateModal/UpdateAllergy";
-import UpdateMedicationHistory from "./UpdateModal/UpdateMedicationHistory";
-import UpdateFamilyHistory from "./UpdateModal/UpdateFamilyHistory";
+import UpdateModal from "../UpdateModal";
+import UpdatePastMedical from "./UpdateForms/UpdatePastMedical";
+import UpdatePastSurgical from "./UpdateForms/UpdatePastSurgical";
+import UpdateAllergy from "./UpdateForms/UpdateAllergy";
+import UpdateMedicationHistory from "./UpdateForms/UpdateMedicationHistory";
+import UpdateFamilyHistory from "./UpdateForms/UpdateFamilyHistory";
 
 const collapseItems = [
   {
