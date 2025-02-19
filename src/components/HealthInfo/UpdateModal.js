@@ -1,10 +1,17 @@
 import { Button, Modal } from "antd";
 import { CloseCircleOutlined } from "@ant-design/icons";
+import { useDispatch, useSelector } from "react-redux";
+import { setOpen } from "../../redux/slices/UpdateModalSlice";
 
-const UpdateModal = ({ open, handleSave, setOpen, innerForm, title }) => {
+const UpdateModal = ({open, handleSave, innerForm, title }) => {
+  const UpdateModalSlice = useSelector((state) => state.UpdateModalSlice);
+  const dispatch = useDispatch();
+
   const handleCancel = () => {
-    setOpen(false);
+    dispatch(setOpen(""));
   };
+  console.log(UpdateModalSlice);
+
   return (
     <>
       <Modal

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Collapse, Space, Button } from "antd";
 import { CaretUpFilled, EditFilled } from "@ant-design/icons"; // Importing an icon
 import PastMedical from "./InnerSections/PastMedical";
@@ -14,6 +14,8 @@ import UpdatePastSurgical from "./UpdateForms/UpdatePastSurgical";
 import UpdateAllergy from "./UpdateForms/UpdateAllergy";
 import UpdateMedicationHistory from "./UpdateForms/UpdateMedicationHistory";
 import UpdateFamilyHistory from "./UpdateForms/UpdateFamilyHistory";
+import { useDispatch, useSelector } from "react-redux";
+import { setOpen } from "../../../redux/slices/UpdateModalSlice";
 
 const collapseItems = [
   {
@@ -44,7 +46,8 @@ const collapseItems = [
 ];
 
 const MedicalHistory = () => {
-  const [open, setOpen] = useState(false);
+  const UpdateModalSlice = useSelector((state) => state.UpdateModalSlice);
+  const dispatch = useDispatch();
 
   const handleSave = () => {
     console.log("Updating data");
@@ -82,7 +85,7 @@ const MedicalHistory = () => {
                   <Button
                     icon={<EditFilled />}
                     type="text"
-                    onClick={() => setOpen(item.label)}
+                    onClick={() => dispatch(setOpen(item.label))}
                     className="collapseText blueText"
                     size="small"
                   >
@@ -93,9 +96,8 @@ const MedicalHistory = () => {
             ]}
           />
           <UpdateModal
-            open={open === item.label}
+            open={UpdateModalSlice.open === item.label}
             handleSave={handleSave}
-            setOpen={setOpen}
             innerForm={item.updateModalInnerForm}
             title={item.label}
           />
