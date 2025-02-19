@@ -11,7 +11,7 @@ import UpdateLifestyle from "./HealthInfoUpdateForms/UpdateLifestyle";
 import UpdatePharmacy from "./HealthInfoUpdateForms/UpdatePharmacy";
 import UpdateModal from "./UpdateModal";
 import { useDispatch, useSelector } from "react-redux";
-import { setNameOfSection, setOpen } from "../../redux/slices/UpdateModalSlice";
+import { setOpen } from "../../redux/slices/UpdateModalSlice";
 
 const items = [
   {
@@ -43,13 +43,10 @@ const items = [
 const TabSection = () => {
   const [activeKey, setActiveKey] = useState("1");
   const dispatch = useDispatch();
-  const UpdateModalSlice = useSelector((state) => state.UpdateModalSlice);
 
   const onChange = (key) => {
     setActiveKey(key);
-    dispatch(setNameOfSection(items[key-1].label));
   };
-console.log(UpdateModalSlice);
 
   const activeLabel = items.find((item) => item.key === activeKey)?.label;
   console.log(activeLabel);
@@ -69,6 +66,7 @@ console.log(UpdateModalSlice);
     </Button>
   );
 
+  const UpdateModalSlice = useSelector((state) => state.UpdateModalSlice);
 
   const handleSave = () => {
     console.log("Updating data");
