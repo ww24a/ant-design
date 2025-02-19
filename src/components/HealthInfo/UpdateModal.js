@@ -16,7 +16,7 @@ const UpdateModal = ({open, handleSave, innerForm, title }) => {
     <>
       <Modal
         open={open}
-        title={title}
+        title={`Update ${title}`}
         onOk={handleSave}
         onCancel={handleCancel}
         width={"900px"}
