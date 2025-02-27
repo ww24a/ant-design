@@ -11,7 +11,7 @@ const HealthInfo = () => {
   const onClose = () => {
     setOpen(false);
   };
-
+        
   return (
     <div
       style={{
